@@ -4,8 +4,11 @@ const port = 3000;
 
 app.use(express.json());
 
+app.get('/', (req, resp)=>{
+    resp.send('hello')
+});
 
 
-console.log(port, ()=>{
-    console.log("Listening on port", port);
-})
+app.listen(port, ()=>{
+    console.log('listening on port:', port);
+});
