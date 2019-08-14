@@ -19,9 +19,15 @@
      </form>
 
     <table>
-    <tr ng-repeat='movie in ctrl.movies'>
-     <td class="image"><a ng-click= "ctrl.getInfo(movie.imdbID)" href="#"><img ng-src= "{{movie.Poster}}"></a><td> <text class="movieInfo">{{movie.Title}}</text><br><text class="movieInfo">Plot:{{ctrl.movie.Plot}} <br> Actors: {{ctrl.movie.Actors}} <br> Genre: {{ctrl.movie.Genre}} <br> Rated: {{ctrl.movie.Rating}} <br> Year: {{ctrl.movie.Year}} <br> IMDB Rating: {{ctrl.movie.imdbRating}} </text></td>
-     
+      <tr ng-repeat='movie in ctrl.movies'>
+          <td class="image"><a ng-click= "ctrl.getInfo(movie.imdbID)" href="#"><img ng-src= "{{movie.Poster}}"></a><td> 
+          <h1>{{movie.Title}}</h1><br>
+          <p class="plot">Plot:{{ctrl.movie.Plot}} </p> 
+          <p>Actors: {{ctrl.movie.Actors}} </p>
+          <p> Genre: {{ctrl.movie.Genre}} </p> 
+          <p> Rated: {{ctrl.movie.Rating}} </p> 
+          <p> Year: {{ctrl.movie.Year}} </p> 
+          <p> IMDB Rating: {{ctrl.movie.imdbRating}}</p></td>
       </tr>
   </table> 
 
