@@ -25,8 +25,10 @@ app.controller('MoviesController', ["$http",function($http) {
             url: "http://www.omdbapi.com/?i="+ imdbID + "&apikey=da868025"
         }).then((response)=>{
             console.log(imdbID);
-            console.log(response.data, response.data.Year);
-            this.movie = response.data.Plot
+            console.log(response.data);
+            this.movie = response.data
+            console.log(this.movie.Plot);
+            
             // this.plot = response.data.Plot;
             
         });
