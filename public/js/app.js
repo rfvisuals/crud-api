@@ -3,6 +3,7 @@ console.log("you connected?");
 const app = angular.module('MoviesApp', []);
 
 app.controller('MoviesController', ["$http",function($http) {
+
     this.getMovies = () => {
 
         // GET request to search for desire to movie
@@ -12,6 +13,7 @@ app.controller('MoviesController', ["$http",function($http) {
         }).then((response)=>{
             console.log(response.data);
             this.movies = response.data.Search;
+            
         });
     };
 

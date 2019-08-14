@@ -13,8 +13,6 @@
   </head>
 
    <body ng-controller= "MoviesController as ctrl">
-
-
      <form ng-submit ="ctrl.getMovies()">
         <input ng-model="ctrl.title" type="text" placeholder="title"/>
         <input type="submit" value='Add Movie'/>
@@ -28,6 +26,8 @@
              <textarea ng-model="ctrl.Comment" rows="10" cols="50"> </textarea> <input ng-model="ctrl.Watched" type="checkbox">Watched
             <input type="submit" value='Submit Comment'/>
           </form>
+          {{movie.Comment}}
+          {{movie.Watched}}
         </div>
       </td>
      </tr>
