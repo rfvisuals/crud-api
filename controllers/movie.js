@@ -9,4 +9,12 @@ movies.get('/', (req, resp)=>{
 })
 
 
+// post route
+
+
+// delete route
+
+
+// put route
+
 module.exports = movies;
