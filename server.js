@@ -6,9 +6,10 @@ const movies = require('./controllers/movie.js')
 
 const db = mongoose.connection
 
-const mongoURI = process.env.PORT || port
-
-// mongoose.connect(mongoURI, {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost:27017/movies', {useNewUrlParser: true});
+mongoose.connection.once('open', ()=>{
+    console.log("connected to mongoose");
+});
 
 app.use(express.json());
 app.use('/movies', movies);
