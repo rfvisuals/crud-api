@@ -5,9 +5,12 @@ const app = angular.module('MoviesApp', []);
 app.controller('MoviesController', ["$http",
 function($http) {
     this.getMovies = () => {
+
+        // GET request to search for desire to movie
         $http({
             method: "GET",
-            url: "https://api.themoviedb.org/3/search/movie?api_key=061fedfef8ce353a68d5e4c131350183&language=en-US&query=" + this.title + "&page=1&include_adult=false"
+            url: "http://www.omdbapi.com/?s="+ this.title + "&apikey=da868025"
+
         }).then((response)=>{
             console.log(response.data);
             console.log(response.data.overview);
