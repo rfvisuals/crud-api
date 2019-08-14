@@ -18,9 +18,9 @@
         <input type="submit" value='Add Movie'/>
      </form>
 
-    <table>
-     <tr ng-repeat='movie in ctrl.movies'>
-       <td><a ng-click= "ctrl.getInfo(movie.imdbID)" href="#"> <img ng-src= "{{movie.Poster}}"> </a> {{movie.Title}}
+    <div class="info-container" ng-repeat='movie in ctrl.movies'>
+     <ul>
+       <li><a ng-click= "ctrl.getInfo(movie.imdbID)" href="#"><img ng-src= "{{movie.Poster}}"> <p> </p></a> <!--{{ctrl.movies}}--> 
          <div class='show'>
            <form ng-submit= 'ctrl.showInfo(movie.imdbID)'>
              <textarea ng-model="ctrl.Comment" rows="10" cols="50"> </textarea> <input ng-model="ctrl.Watched" type="checkbox">Watched
@@ -29,8 +29,8 @@
           {{movie.Comment}}
           {{movie.Watched}}
         </div>
-      </td>
-     </tr>
-   </table>
+      </li>
+     </ul>
+   </div>
   </body>
 </html>
