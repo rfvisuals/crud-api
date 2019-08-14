@@ -13,16 +13,20 @@
   </head>
 
    <body ng-controller= "MoviesController as ctrl">
+
+
      <form ng-submit ="ctrl.getMovies()">
         <input ng-model="ctrl.title" type="text" placeholder="title"/>
         <input type="submit" value='Add Movie'/>
-      </form>
-      <table>
+     </form>
+
+    <table>
         <th>Title</th>
      <tr ng-repeat='movie in ctrl.movies'>
        <td ng-click= "ctrl.getInfo()"><a href="#"><img ng-src= "{{movie.Poster}}"></a> </td>
 
      </tr>
    </table>
+
   </body>
 </html>
