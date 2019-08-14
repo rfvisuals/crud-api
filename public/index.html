@@ -13,15 +13,23 @@
   </head>
 
    <body ng-controller= "MoviesController as ctrl">
+
+
      <form ng-submit ="ctrl.getMovies()">
         <input ng-model="ctrl.title" type="text" placeholder="title"/>
         <input type="submit" value='Add Movie'/>
-      </form>
-      <table>
-        <th>Title</th>
-     <tr ng-repeat='movie in ctrl.movies'>
-       <td ng-click= "ctrl.getInfo()"> <a href="#"> <img ng-src= "{{movie.Poster}}"></a> </td>
+     </form>
 
+    <table>
+     <tr ng-repeat='movie in ctrl.movies'>
+       <td><a ng-click= "ctrl.getInfo(movie.imdbID)" href="#"> <img ng-src= "{{movie.Poster}}"> </a> {{movie.Title}}
+         <div class='show'>
+           <form ng-submit= 'ctrl.showInfo(movie.imdbID)'>
+             <textarea ng-model="ctrl.Comment" rows="10" cols="50"> </textarea> <input ng-model="ctrl.Watched" type="checkbox">Watched
+            <input type="submit" value='Submit Comment'/>
+          </form>
+        </div>
+      </td>
      </tr>
    </table>
   </body>
