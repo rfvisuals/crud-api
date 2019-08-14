@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='MoviesApp'>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
+    <title>Favorite Movies</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src='/js/app.js'>
+    </script>
+
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+   <body ng-controller= "MoviesController as ctrl">
+     <form id="search" ng-submit ="ctrl.getMovies()">
+        <input ng-model="ctrl.title" type="text" placeholder="title"/>
+        <input type="submit" value='Search Movies'/>
+     </form>
+
+    <table>
+    <tr ng-repeat='movie in ctrl.movies'>
+     <td class="image"><a ng-click= "ctrl.getInfo(movie.imdbID)" href="#"><img ng-src= "{{movie.Poster}}"></a><td> <text class="movieInfo">{{movie.Title}}</text><br><text class="movieInfo">Plot:{{ctrl.movie.Plot}} <br> Actors: {{ctrl.movie.Actors}} <br> Genre: {{ctrl.movie.Genre}} <br> Rated: {{ctrl.movie.Rating}} <br> Year: {{ctrl.movie.Year}} <br> IMDB Rating: {{ctrl.movie.imdbRating}} </text></td>
+     
+      </tr>
+  </table> 
+
+  <!--Figure out why the form is appearing at the top of the page and not underneath each table row-->
+  <form ng-submit= 'ctrl.showInfo(movie.imdbID)'>
+        <textarea ng-model="ctrl.Comment" rows="10" cols="50"> </textarea> <input ng-model="ctrl.Watched" type="checkbox">Watched
+        <input type="submit" value='Submit Comment'/>
+  </form>
+    
+
+  </body>
+</html>

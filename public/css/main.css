@@ -1,0 +1,35 @@
+*{
+  border: 1px solid gold;
+}
+.info-container{
+  display: inline;
+}
+#search{
+  margin-top: 80px;
+  text-align: center;
+}
+
+#search input {
+  font-size: 24px;
+}
+
+textarea{
+  resize: none;
+}
+
+.movieTitles{
+  padding-left: 20px;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.movieInfo{
+  padding-left: 20px;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+li {
+  list-style-type: none;
+}
