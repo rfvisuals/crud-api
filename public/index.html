@@ -12,6 +12,9 @@
   </head>
    <body ng-controller= "MoviesController as ctrl">
 
-
+     <form ng-submit ="ctrl.getMovies()">
+        <input ng-model="ctrl.title" type="text" placeholder="title"/>
+        <input type="submit" value='Add Movie'/>
+      </form>
   </body>
 </html>
