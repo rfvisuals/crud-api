@@ -12,20 +12,19 @@ app.controller('MoviesController', ["$http",function($http) {
             method: "GET",
             url: "http://www.omdbapi.com/?s="+ this.title + "&apikey=da868025"
         }).then((response)=>{
-            console.log(response.data);
             this.movies = response.data.Search;
 
         });
     };
 
     this.getInfo = (imdbID) => {
+
         $http({
             method: "GET",
             url: "http://www.omdbapi.com/?i="+ imdbID + "&apikey=da868025"
         }).then((response)=>{
-            // console.log(imdbID);
-          this.movies= response.data
-          
+            this.plots = response.data.Plot
+            console.log(this.plots);
         });
     };
 
