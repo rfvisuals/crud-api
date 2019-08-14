@@ -18,5 +18,9 @@ function($http) {
         });
     };
 
+    this.getInfo = () => {
+        
+    }
+
 
 }]); // app.controller closing
