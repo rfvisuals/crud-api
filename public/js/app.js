@@ -3,7 +3,8 @@ console.log("you connected?");
 const app = angular.module('MoviesApp', []);
 
 app.controller('MoviesController', ["$http", function($http) {
-    this.title = title;
+
+    console.log(this.title)
     this.getMovies = () => {
         $http({
             method: "GET",
@@ -14,7 +15,7 @@ app.controller('MoviesController', ["$http", function($http) {
             console.log(response.data);
             console.log(response.data.overview);
             this.movies = response.data;
-        });  
+        });
     };
     this.getMovies();
 
